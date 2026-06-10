@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- TAG OBRIGATÓRIA DO PROJETO -->
+  <meta name="agrinho" content="Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente" />
+  <title>Agro Forte, Futuro Sustentável</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Fontes: Space Grotesk (títulos) e Inter (corpo) via Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <!-- Chart.js para gráficos de dados - versão 4.4 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+</head>
+<body>
+
+  <!-- ===================================================
+       NAVEGAÇÃO
+       =================================================== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-icon">🌱</span>
+        <span>AgroFuturo</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#sobre">O Agro</a></li>
+        <li><a href="#dados">Dados</a></li>
+        <li><a href="#biomas">Biomas</a></li>
+        <li><a href="#comparacao">Comparação</a></li>
+        <li><a href="#solucoes">Soluções</a></li>
+        <li><a href="#quiz">Quiz</a></li>
+        <li><a href="#creditos">Créditos</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===================================================
+       SEÇÃO HERO
+       Imagem de fundo: Unsplash - fotografia de plantação de soja,
+       livre de direitos autorais (Unsplash License).
+       Foto de: Raphael Rychetsky / Unsplash
+       URL: https://unsplash.com/photos/a-large-field-of-crops-with-a-blue-sky-in-the-background
+       =================================================== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <!-- Imagem de fundo via CSS no style.css -->
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-tag">Projeto Agrinho 2025</div>
+      <h1 class="hero-title">
+        <span class="title-line">Agro Forte,</span>
+        <span class="title-line accent">Futuro Sustentável</span>
+      </h1>
+      <p class="hero-subtitle">
+        Equilíbrio entre produção e meio ambiente: como o Brasil pode alimentar o mundo sem destruir seus biomas.
+      </p>
+      <div class="hero-stats">
+        <!-- Fonte: CNA/CEPEA-Esalq/USP - PIB do Agronegócio 2024 (abril/2025) -->
+        <div class="stat-item">
+          <span class="stat-number" data-target="23.2">0</span><span class="stat-unit">%</span>
+          <span class="stat-label">do PIB brasileiro</span>
+        </div>
+        <!-- Fonte: MAPA - Ministério da Agricultura e Pecuária (jan/2025) -->
+        <div class="stat-item">
+          <span class="stat-prefix">US$</span>
+          <span class="stat-number" data-target="164">0</span><span class="stat-unit">bi</span>
+          <span class="stat-label">em exportações em 2024</span>
+        </div>
+        <!-- Fonte: MapBiomas Alerta - Relatório Anual do Desmatamento 2024 (maio/2025) -->
+        <div class="stat-item">
+          <span class="stat-number" data-target="1.24">0</span><span class="stat-unit">M ha</span>
+          <span class="stat-label">desmatados em 2024</span>
+        </div>
+      </div>
+      <a href="#sobre" class="hero-btn">Entender o equilíbrio</a>
+    </div>
+    <div class="hero-scroll">
+      <span>Role para baixo</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       SEÇÃO: SOBRE O AGRONEGÓCIO
+       =================================================== -->
+  <section class="section" id="sobre">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">O que é</span>
+        <h2 class="section-title">O Agronegócio Brasileiro</h2>
+        <p class="section-desc">
+          O agronegócio vai muito além da fazenda. Ele envolve toda a cadeia produtiva: desde os insumos e maquinários utilizados na produção, passando pela agropecuária em si, até a agroindústria que processa e os agrosserviços que distribuem os produtos ao mundo.
+        </p>
+      </div>
+
+      <div class="cards-grid">
+        <!-- Fonte: CEPEA/CNA - PIB do Agronegócio 4º trimestre 2024 (abril/2025) -->
+        <div class="card card--green" data-animate>
+          <div class="card-icon">🌾</div>
+          <h3>Ramo Agrícola</h3>
+          <p class="card-value">R$ 1,9 trilhão</p>
+          <p>Lavouras de soja, milho, cana-de-açúcar, café e algodão lideram a produção vegetal brasileira em 2024.</p>
+          <span class="card-source">Fonte: CNA/CEPEA, 2025</span>
+        </div>
+
+        <!-- Fonte: CEPEA/CNA - PIB do Agronegócio 4º trimestre 2024 (abril/2025) -->
+        <div class="card card--amber" data-animate>
+          <div class="card-icon">🐄</div>
+          <h3>Ramo Pecuário</h3>
+          <p class="card-value">R$ 819 bilhões</p>
+          <p>O ramo pecuário cresceu 12,48% em 2024, impulsionado pela agroindústria e agrosserviços de carnes.</p>
+          <span class="card-source">Fonte: CNA/CEPEA, 2025</span>
+        </div>
+
+        <!-- Fonte: MAPA - Exportações do Agronegócio 2024 (jan/2025) -->
+        <div class="card card--blue" data-animate>
+          <div class="card-icon">🚢</div>
+          <h3>Exportações</h3>
+          <p class="card-value">US$ 164,37 bilhões</p>
+          <p>Segundo maior valor histórico, representando 48,8% de tudo que o Brasil exportou em 2024.</p>
+          <span class="card-source">Fonte: MAPA, jan/2025</span>
+        </div>
+
+        <!-- Fonte: Embrapa - Trajetória da agricultura brasileira -->
+        <div class="card card--teal" data-animate>
+          <div class="card-icon">📈</div>
+          <h3>Produtividade</h3>
+          <p class="card-value">+6x em 40 anos</p>
+          <p>Entre 1975 e 2017, a produção de grãos saltou de 38 para 236 milhões de toneladas, com área plantada apenas dobrando.</p>
+          <span class="card-source">Fonte: Embrapa, 2023</span>
+        </div>
+      </div>
+
+      <!-- Destaque do problema central -->
+      <div class="problem-block" data-animate>
+        <div class="problem-icon">⚠️</div>
+        <div class="problem-text">
+          <h3>O Dilema Central</h3>
+          <!-- Fonte: Radar Digital Brasília / Ministério da Agricultura - declaração do ministro Fávaro, 2025 -->
+          <p>O Brasil precisa <strong>aumentar em até 70% a produtividade agrícola até 2050</strong> para atender à demanda global — mas <strong>sem expandir as áreas produtivas</strong> sobre os biomas nativos. Esse é o maior desafio do agronegócio sustentável.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       SEÇÃO: DADOS & GRÁFICOS
+       =================================================== -->
+  <section class="section section--dark" id="dados">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Números reais</span>
+        <h2 class="section-title">Brasil em Dados</h2>
+        <p class="section-desc">Veja como a produção cresceu muito mais do que a área plantada — e o que isso significa para o futuro.</p>
+      </div>
+
+      <div class="charts-grid">
+        <!-- GRÁFICO 1: Produção de grãos x Área plantada -->
+        <!-- Fonte: Embrapa - "Trajetória da agricultura brasileira" + Conab - Safra 2024/2025 (set/2024) -->
+        <div class="chart-card" data-animate>
+          <h3 class="chart-title">Produção de Grãos vs. Área Plantada</h3>
+          <p class="chart-subtitle">Em milhões (toneladas / hectares) — 1975 a 2025</p>
+          <canvas id="graosChart" height="260"></canvas>
+          <span class="chart-source">Fonte: Embrapa (2023) + Conab (2024)</span>
+        </div>
+
+        <!-- GRÁFICO 2: Exportações por setor 2024 -->
+        <!-- Fonte: MAPA - Exportações do Agronegócio jan-nov/2024 (dez/2024) -->
+        <div class="chart-card" data-animate>
+          <h3 class="chart-title">Exportações por Setor em 2024</h3>
+          <p class="chart-subtitle">Em bilhões de dólares (jan–nov/2024)</p>
+          <canvas id="exportChart" height="260"></canvas>
+          <span class="chart-source">Fonte: MAPA, dez/2024</span>
+        </div>
+
+        <!-- GRÁFICO 3: Desmatamento por bioma 2024 -->
+        <!-- Fonte: MapBiomas Alerta - Relatório Anual do Desmatamento 2024 (mai/2025) -->
+        <div class="chart-card chart-card--full" data-animate>
+          <h3 class="chart-title">Desmatamento por Bioma em 2024</h3>
+          <p class="chart-subtitle">Em hectares — total: 1.242.079 ha desmatados</p>
+          <canvas id="biomassChart" height="180"></canvas>
+          <span class="chart-source">Fonte: MapBiomas Alerta - RAD 2024, mai/2025</span>
+        </div>
+      </div>
+
+      <!-- CONTADOR DE IMPACTO EM TEMPO REAL -->
+      <div class="impact-counter" data-animate>
+        <h3 class="counter-title">🌳 Impacto em tempo real (estimativa baseada em dados de 2024)</h3>
+        <!-- Fonte: MapBiomas Alerta RAD 2024 - 3.403 ha/dia = 141,8 ha/h = 2,36 ha/min -->
+        <p class="counter-desc">Em 2024, o Brasil desmatou em média <strong>141,8 hectares por hora</strong>. Desde que você abriu esta página:</p>
+        <div class="counter-display">
+          <span id="liveCounter">0</span>
+          <span class="counter-unit">hectares desmatados</span>
+        </div>
+        <p class="counter-note">*Estimativa baseada na média diária de 3.403 ha/dia registrada em 2024. Fonte: MapBiomas Alerta, mai/2025.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       SEÇÃO: BIOMAS EM RISCO
+       =================================================== -->
+  <section class="section" id="biomas">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Territórios ameaçados</span>
+        <h2 class="section-title">Biomas em Risco</h2>
+        <p class="section-desc">Conheça os biomas brasileiros mais afetados pela expansão agropecuária descontrolada.</p>
+      </div>
+
+      <div class="biomas-grid">
+
+        <!-- Imagem: Amazônia via Unsplash (Marcus Kauffman) - Unsplash License -->
+        <!-- Fonte dados: MapBiomas Alerta RAD 2024 + INPE PRODES -->
+        <div class="bioma-card" data-animate>
+          <div class="bioma-img bioma-img--amazon"
+               role="img"
+               aria-label="Floresta Amazônica — vegetação densa e verde com rio ao fundo">
+          </div>
+          <div class="bioma-body">
+            <div class="bioma-badge bioma-badge--red">CRÍTICO</div>
+            <h3>Amazônia</h3>
+            <p>A maior floresta tropical do mundo. Em 2024, foram desmatados aproximadamente <strong>378.000 hectares</strong> — uma queda de 16,8% frente a 2023, mas ainda equivalente a quase 3 vezes a cidade de São Paulo.</p>
+            <ul class="bioma-facts">
+              <li><span class="fact-icon">📏</span> 4,2 milhões de km² no Brasil</li>
+              <li><span class="fact-icon">🌡️</span> Regula o clima de toda a América do Sul</li>
+              <li><span class="fact-icon">🪓</span> Pará: estado com maior desmatamento acumulado (2019–2024): ~2 milhões de ha</li>
+            </ul>
+            <span class="bioma-source">Fonte: MapBiomas Alerta RAD 2024 / INPE</span>
+          </div>
+        </div>
+
+        <!-- Imagem: Cerrado via Unsplash - Unsplash License -->
+        <!-- Fonte dados: MapBiomas Alerta RAD 2024 + IPAM SAD Cerrado fev/2025 -->
+        <div class="bioma-card bioma-card--featured" data-animate>
+          <div class="bioma-img bioma-img--cerrado"
+               role="img"
+               aria-label="Cerrado brasileiro — vegetação rasteira, árvores retorcidas e céu alaranjado ao entardecer">
+          </div>
+          <div class="bioma-body">
+            <div class="bioma-badge bioma-badge--orange">MAIS DESMATADO EM 2024</div>
+            <h3>Cerrado</h3>
+            <p>Pelo <strong>segundo ano consecutivo</strong>, o Cerrado foi o bioma com maior área desmatada do país: <strong>652.197 hectares</strong> em 2024 — mais da metade (52,5%) de todo o desmatamento nacional.</p>
+            <ul class="bioma-facts">
+              <li><span class="fact-icon">🗺️</span> Matopiba concentrou 75% do desmatamento do Cerrado</li>
+              <li><span class="fact-icon">💧</span> Nascente de 8 das 12 principais bacias hidrográficas do Brasil</li>
+              <li><span class="fact-icon">🌿</span> Permitido desmatar até 80% da propriedade (vs. 20% na Amazônia)</li>
+            </ul>
+            <span class="bioma-source">Fonte: MapBiomas Alerta RAD 2024 / IPAM, fev/2025</span>
+          </div>
+        </div>
+
+        <!-- Imagem: Mata Atlântica via Unsplash - Unsplash License -->
+        <!-- Fonte dados: Fundação SOS Mata Atlântica (citada por Agência Brasil, mai/2025) -->
+        <div class="bioma-card" data-animate>
+          <div class="bioma-img bioma-img--mata"
+               role="img"
+               aria-label="Mata Atlântica — floresta densa com cachoeira e vegetação exuberante">
+          </div>
+          <div class="bioma-body">
+            <div class="bioma-badge bioma-badge--yellow">ATENÇÃO</div>
+            <h3>Mata Atlântica</h3>
+            <p>Já reduziu a menos de <strong>12% da sua cobertura original</strong>. Em 2024, foi o único bioma que registrou <strong>aumento de 2%</strong> no desmatamento em relação a 2023, contrariando a tendência de queda dos demais.</p>
+            <ul class="bioma-facts">
+              <li><span class="fact-icon">🏙️</span> Cobre 15 estados e abriga 70% da população brasileira</li>
+              <li><span class="fact-icon">🦜</span> Hotspot global de biodiversidade</li>
+              <li><span class="fact-icon">📉</span> Apenas ~12% da cobertura original restante</li>
+            </ul>
+            <span class="bioma-source">Fonte: SOS Mata Atlântica / MapBiomas RAD 2024</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- MAPA VISUAL SIMPLIFICADO - Matopiba -->
+      <div class="matopiba-block" data-animate>
+        <div class="matopiba-text">
+          <h3>O Problema do Matopiba</h3>
+          <!-- Fonte: MapBiomas Alerta RAD 2024 + Agência Brasil mai/2025 -->
+          <p>A região do <strong>Matopiba</strong> (Maranhão, Tocantins, Piauí e Bahia) concentrou <strong>42% de toda a perda de vegetação nativa</strong> do Brasil em 2024. Os quatro estados da região estão entre os cinco que mais desmataram no país. Liderado pelo Maranhão, com 218.298 hectares desmatados.</p>
+          <p>O avanço do agronegócio sobre o Cerrado nessa região é o principal motor do desmatamento. Em vez de intensificar o uso das áreas já convertidas, a expansão continua derrubando o que resta da savana tropical mais biodiversa do planeta.</p>
+          <div class="matopiba-states">
+            <div class="state-pill">Maranhão <span>218.298 ha</span></div>
+            <div class="state-pill">Tocantins <span>~160.000 ha</span></div>
+            <div class="state-pill">Piauí <span>~130.000 ha</span></div>
+            <div class="state-pill">Bahia <span>~142.000 ha</span></div>
+          </div>
+          <span class="bioma-source">Fonte: MapBiomas Alerta RAD 2024, mai/2025</span>
+        </div>
+        <div class="matopiba-visual">
+          <!-- Representação visual dos estados do Matopiba -->
+          <svg viewBox="0 0 220 260" xmlns="http://www.w3.org/2000/svg" aria-label="Mapa esquemático da região Matopiba">
+            <defs>
+              <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                <line x1="0" y1="0" x2="0" y2="6" stroke="#4CAF50" stroke-width="1.5" opacity="0.4"/>
+              </pattern>
+            </defs>
+            <!-- Brasil esquemático (fundo) -->
+            <rect x="10" y="10" width="200" height="240" rx="8" fill="#1a1a2e" stroke="#2a2a4e" stroke-width="1"/>
+            <!-- Maranhão -->
+            <rect x="30" y="30" width="80" height="90" rx="4" fill="#E74C3C" opacity="0.85"/>
+            <text x="70" y="70" text-anchor="middle" fill="white" font-size="9" font-family="Inter, sans-serif" font-weight="600">MA</text>
+            <text x="70" y="82" text-anchor="middle" fill="white" font-size="7" font-family="Inter, sans-serif">218k ha</text>
+            <!-- Tocantins -->
+            <rect x="115" y="60" width="70" height="100" rx="4" fill="#F39C12" opacity="0.85"/>
+            <text x="150" y="108" text-anchor="middle" fill="white" font-size="9" font-family="Inter, sans-serif" font-weight="600">TO</text>
+            <text x="150" y="120" text-anchor="middle" fill="white" font-size="7" font-family="Inter, sans-serif">~160k ha</text>
+            <!-- Piauí -->
+            <rect x="30" y="125" width="80" height="80" rx="4" fill="#9B59B6" opacity="0.85"/>
+            <text x="70" y="162" text-anchor="middle" fill="white" font-size="9" font-family="Inter, sans-serif" font-weight="600">PI</text>
+            <text x="70" y="174" text-anchor="middle" fill="white" font-size="7" font-family="Inter, sans-serif">~130k ha</text>
+            <!-- Bahia -->
+            <rect x="70" y="205" width="110" height="30" rx="4" fill="#16A085" opacity="0.85"/>
+            <text x="125" y="223" text-anchor="middle" fill="white" font-size="9" font-family="Inter, sans-serif" font-weight="600">BA — ~142k ha</text>
+            <!-- Legenda -->
+            <rect x="20" y="240" width="12" height="12" fill="#E74C3C" rx="2"/>
+            <text x="36" y="250" fill="#aaa" font-size="8" font-family="Inter, sans-serif">= área desmatada 2024</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       SEÇÃO: COMPARAÇÃO — EXPANSÃO vs. INTENSIFICAÇÃO
+       =================================================== -->
+  <section class="section section--dark" id="comparacao">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">O caminho certo</span>
+        <h2 class="section-title">Expansão vs. Intensificação</h2>
+        <p class="section-desc">Existem dois caminhos para aumentar a produção. A escolha que fizermos hoje definirá o Brasil de amanhã.</p>
+      </div>
+
+      <div class="comparison-wrapper">
+        <div class="comparison-col comparison-col--bad" data-animate>
+          <div class="comparison-header">
+            <span class="comp-icon">🪓</span>
+            <h3>Expansão Descontrolada</h3>
+            <span class="comp-tag comp-tag--danger">Insustentável</span>
+          </div>
+          <ul class="comp-list">
+            <li>
+              <span class="comp-marker comp-marker--bad">✗</span>
+              <div>
+                <strong>Derruba biomas nativos</strong>
+                <p>Cada hectare novo desflorestado emite entre 100 e 300 toneladas de CO₂ na atmosfera.</p>
+              </div>
+            </li>
+            <li>
+              <span class="comp-marker comp-marker--bad">✗</span>
+              <div>
+                <strong>Seca os rios</strong>
+                <p>O Cerrado nasce 8 das 12 principais bacias hidrográficas do Brasil. Sem vegetação, a água some.</p>
+              </div>
+            </li>
+            <li>
+              <span class="comp-marker comp-marker--bad">✗</span>
+              <div>
+                <strong>Destrói biodiversidade</strong>
+                <p>Nos últimos 6 anos, o Brasil perdeu cerca de 9,88 milhões de hectares de vegetação nativa.</p>
+                <!-- Fonte: MapBiomas Alerta RAD 2024 -->
+              </div>
+            </li>
+            <li>
+              <span class="comp-marker comp-marker--bad">✗</span>
+              <div>
+                <strong>Prejudica o clima agrícola</strong>
+                <p>O desmatamento reduz chuvas e aumenta secas, prejudicando a própria produção agropecuária.</p>
+              </div>
+            </li>
+            <li>
+              <span class="comp-marker comp-marker--bad">✗</span>
+              <div>
+                <strong>Viola acordos internacionais</strong>
+                <p>Parceiros comerciais exigem comprovação de origem não-desmatada, podendo barrar exportações.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="comparison-divider">
+          <span>VS</span>
+        </div>
+
+        <div class="comparison-col comparison-col--good" data-animate>
+          <div class="comparison-header">
+            <span class="comp-icon">🔬</span>
+            <h3>Intensificação Sustentável</h3>
+            <span class="comp-tag comp-tag--success">O Futuro</span>
+          </div>
+          <ul class="comp-list">
+            <li>
+              <span class="comp-marker comp-marker--good">✓</span>
+              <div>
+                <strong>Mais produção por hectare</strong>
+                <!-- Fonte: Embrapa - Trajetória da agricultura brasileira -->
+                <p>A produção de grãos cresceu 6x entre 1975 e 2017, com área apenas dobrando. A tecnologia funciona.</p>
+              </div>
+            </li>
+            <li>
+              <span class="comp-marker comp-marker--good">✓</span>
+              <div>
+                <strong>Pastagens degradadas reaproveitadas</strong>
+                <!-- Fonte: Embrapa - Crescimento e intensificação da produção agrícola brasileira -->
+                <p>O Brasil tem ~50 milhões de hectares de pastagens degradadas que podem virar lavoura produtiva.</p>
+              </div>
+            </li>
+            <li>
+              <span class="comp-marker comp-marker--good">✓</span>
+              <div>
+                <strong>Tecnologia e ciência no campo</strong>
+                <!-- Fonte: Embrapa - Portal oficial -->
+                <p>A Embrapa e universidades desenvolvem cultivares adaptados ao clima tropical com maior rendimento.</p>
+              </div>
+            </li>
+            <li>
+              <span class="comp-marker comp-marker--good">✓</span>
+              <div>
+                <strong>Mantém serviços ecossistêmicos</strong>
+                <p>Florestas e biomas preservados garantem água, regulação climática e polinização para a própria agricultura.</p>
+              </div>
+            </li>
+            <li>
+              <span class="comp-marker comp-marker--good">✓</span>
+              <div>
+                <strong>Abre mercados globais</strong>
+                <!-- Fonte: MAPA - Exportações 2024 / CNN Brasil jan/2025 -->
+                <p>Produto sustentável tem maior valor agregado e acesso a mercados que exigem rastreabilidade ambiental.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- LINHA DO TEMPO: Evolução da produção -->
+      <!-- Fonte: Embrapa - Trajetória da agricultura brasileira + Conab 2024 -->
+      <div class="timeline-block" data-animate>
+        <h3>Evolução da Produção de Soja no Brasil</h3>
+        <p class="timeline-subtitle">Um exemplo de como a tecnologia multiplicou a produção sem proporcional expansão de área</p>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="tl-year">1990</div>
+            <div class="tl-bar-wrap">
+              <div class="tl-bar" style="width: 12%;">
+                <span class="tl-val">18 mi t</span>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="tl-year">2000</div>
+            <div class="tl-bar-wrap">
+              <div class="tl-bar" style="width: 27%;">
+                <span class="tl-val">41,9 mi t</span>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="tl-year">2010</div>
+            <div class="tl-bar-wrap">
+              <div class="tl-bar" style="width: 45%;">
+                <span class="tl-val">69 mi t</span>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="tl-year">2020</div>
+            <div class="tl-bar-wrap">
+              <div class="tl-bar" style="width: 79%;">
+                <span class="tl-val">121 mi t</span>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item tl-highlight">
+            <div class="tl-year">2023</div>
+            <div class="tl-bar-wrap">
+              <div class="tl-bar tl-bar--accent" style="width: 100%;">
+                <span class="tl-val">154,6 mi t 🏆</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="chart-source">Fonte: Embrapa (2023) — "A produção brasileira de grãos: salto quantitativo"</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       SEÇÃO: SOLUÇÕES SUSTENTÁVEIS
+       =================================================== -->
+  <section class="section" id="solucoes">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Caminhos possíveis</span>
+        <h2 class="section-title">Soluções para o Equilíbrio</h2>
+        <p class="section-desc">A ciência, a tecnologia e as políticas públicas já apontam como o Brasil pode produzir mais, preservando o que tem.</p>
+      </div>
+
+      <div class="solutions-grid">
+        <div class="solution-card" data-animate>
+          <div class="sol-number">01</div>
+          <div class="sol-icon">🔬</div>
+          <h3>Agricultura de Precisão</h3>
+          <p>Uso de sensores, drones, GPS e inteligência artificial para aplicar insumos exatamente onde necessário, reduzindo desperdícios e maximizando a produtividade por hectare.</p>
+        </div>
+
+        <div class="solution-card" data-animate>
+          <div class="sol-number">02</div>
+          <div class="sol-icon">🌿</div>
+          <h3>Integração Lavoura-Pecuária-Floresta</h3>
+          <!-- Fonte: Embrapa - Sistema de Integração Lavoura-Pecuária-Floresta (iLPF) -->
+          <p>O sistema iLPF combina culturas agrícolas, pecuária e árvores na mesma área. Desenvolvido pela Embrapa, aumenta a produção por hectare e recupera pastagens degradadas.</p>
+        </div>
+
+        <div class="solution-card" data-animate>
+          <div class="sol-number">03</div>
+          <div class="sol-icon">🌱</div>
+          <h3>Recuperação de Pastagens</h3>
+          <!-- Fonte: Embrapa - Crescimento e intensificação da produção agrícola -->
+          <p>O Brasil possui cerca de 50 milhões de hectares de pastagens degradadas. Recuperá-las para uso produtivo equivale a criar uma nova fronteira agrícola sem desmatar nada.</p>
+        </div>
+
+        <div class="solution-card" data-animate>
+          <div class="sol-number">04</div>
+          <div class="sol-icon">☀️</div>
+          <h3>Agrovoltaica</h3>
+          <p>Combinação de painéis solares com produção agrícola ou pecuária na mesma área. A sombra dos painéis pode beneficiar certas culturas e reduzir o estresse hídrico.</p>
+        </div>
+
+        <div class="solution-card" data-animate>
+          <div class="sol-number">05</div>
+          <div class="sol-icon">💧</div>
+          <h3>Gestão Hídrica Inteligente</h3>
+          <p>Sistemas de irrigação de precisão, captação de água da chuva e monitoramento de aquíferos garantem água suficiente para produção sem comprometer os rios e o solo.</p>
+        </div>
+
+        <div class="solution-card" data-animate>
+          <div class="sol-number">06</div>
+          <div class="sol-icon">🧬</div>
+          <h3>Melhoramento Genético</h3>
+          <!-- Fonte: Embrapa - Portal oficial, desenvolvimento de variedades tropicais -->
+          <p>A Embrapa desenvolveu variedades de soja, milho e outras culturas adaptadas ao cerrado brasileiro, com maior resistência à seca e maior produtividade. A ciência multiplicou a produção.</p>
+        </div>
+      </div>
+
+      <!-- BLOCO: Código Florestal -->
+      <div class="law-block" data-animate>
+        <div class="law-icon">⚖️</div>
+        <div class="law-content">
+          <h3>O Código Florestal Brasileiro</h3>
+          <p>A lei brasileira exige que propriedades rurais mantenham uma <strong>Reserva Legal</strong>: 80% da área preservada na Amazônia, 35% no Cerrado e 20% nas demais regiões. O desafio é fazer cumprir essas regras e usar com máxima eficiência as áreas já autorizadas para produção.</p>
+          <!-- Fonte: Lei nº 12.651/2012 - Código Florestal Brasileiro -->
+          <span class="law-source">Base legal: Lei nº 12.651/2012 — Código Florestal Brasileiro</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       SEÇÃO: QUIZ INTERATIVO
+       =================================================== -->
+  <section class="section section--dark" id="quiz">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Teste seu conhecimento</span>
+        <h2 class="section-title">Quiz: Agro e Sustentabilidade</h2>
+        <p class="section-desc">Você aprendeu sobre o equilíbrio entre produção e meio ambiente? Teste agora!</p>
+      </div>
+
+      <div class="quiz-container" id="quizContainer">
+        <div class="quiz-progress">
+          <div class="quiz-progress-bar" id="quizProgressBar"></div>
+        </div>
+        <div class="quiz-question-num" id="quizNum">Questão 1 de 6</div>
+
+        <div id="quizContent">
+          <!-- Preenchido pelo JavaScript -->
+        </div>
+
+        <div class="quiz-nav">
+          <button class="btn btn--outline" id="prevBtn" onclick="prevQuestion()" style="display:none">← Anterior</button>
+          <button class="btn btn--primary" id="nextBtn" onclick="nextQuestion()">Próxima →</button>
+        </div>
+      </div>
+
+      <div class="quiz-result" id="quizResult" style="display:none">
+        <div class="result-icon" id="resultIcon"></div>
+        <h3 id="resultTitle"></h3>
+        <p id="resultDesc"></p>
+        <div class="result-score">
+          <span id="resultScore"></span>
+          <span class="result-total">/ 6 pontos</span>
+        </div>
+        <button class="btn btn--primary" onclick="resetQuiz()">Tentar novamente</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       SEÇÃO: CRÉDITOS
+       =================================================== -->
+  <section class="section" id="creditos">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Transparência</span>
+        <h2 class="section-title">Fontes e Créditos</h2>
+        <p class="section-desc">Todas as informações deste site são baseadas em fontes científicas, governamentais e institucionais públicas e verificáveis.</p>
+      </div>
+
+      <div class="credits-grid">
+
+        <div class="credit-card" data-animate>
+          <h3>📊 Dados Econômicos</h3>
+          <ul>
+            <li>
+              <strong>CNA/CEPEA-Esalq/USP</strong><br/>
+              PIB do Agronegócio Brasileiro 2024<br/>
+              <a href="https://cepea.org.br/br/pib-do-agronegocio-brasileiro.aspx" target="_blank" rel="noopener noreferrer">cepea.org.br</a>
+            </li>
+            <li>
+              <strong>MAPA - Ministério da Agricultura e Pecuária</strong><br/>
+              Exportações do Agronegócio 2024<br/>
+              <a href="https://www.gov.br/agricultura" target="_blank" rel="noopener noreferrer">gov.br/agricultura</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="credit-card" data-animate>
+          <h3>🌿 Dados Ambientais</h3>
+          <ul>
+            <li>
+              <strong>MapBiomas Alerta</strong><br/>
+              Relatório Anual do Desmatamento (RAD) 2024<br/>
+              <a href="https://brasil.mapbiomas.org" target="_blank" rel="noopener noreferrer">brasil.mapbiomas.org</a>
+            </li>
+            <li>
+              <strong>INPE - Instituto Nacional de Pesquisas Espaciais</strong><br/>
+              PRODES: Sistema de Monitoramento do Desmatamento<br/>
+              <a href="https://inpe.br" target="_blank" rel="noopener noreferrer">inpe.br</a>
+            </li>
+            <li>
+              <strong>IPAM - Instituto de Pesquisa Ambiental da Amazônia</strong><br/>
+              SAD Cerrado — Sistema de Alerta de Desmatamento<br/>
+              <a href="https://ipam.org.br" target="_blank" rel="noopener noreferrer">ipam.org.br</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="credit-card" data-animate>
+          <h3>🔬 Pesquisa e Ciência</h3>
+          <ul>
+            <li>
+              <strong>Embrapa - Empresa Brasileira de Pesquisa Agropecuária</strong><br/>
+              Trajetória da agricultura brasileira / Sistema iLPF<br/>
+              <a href="https://embrapa.br" target="_blank" rel="noopener noreferrer">embrapa.br</a>
+            </li>
+            <li>
+              <strong>Conab - Companhia Nacional de Abastecimento</strong><br/>
+              Levantamento de Safras 2024/2025<br/>
+              <a href="https://conab.gov.br" target="_blank" rel="noopener noreferrer">conab.gov.br</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="credit-card" data-animate>
+          <h3>🖼️ Imagens</h3>
+          <ul>
+            <li>
+              <strong>Unsplash</strong> — Imagens livres de direitos autorais<br/>
+              Licença Unsplash (uso gratuito, sem atribuição obrigatória)<br/>
+              <a href="https://unsplash.com/license" target="_blank" rel="noopener noreferrer">unsplash.com/license</a>
+            </li>
+            <li>
+              <strong>Chart.js v4.4.1</strong> — Biblioteca de gráficos open-source<br/>
+              Licença MIT<br/>
+              <a href="https://chartjs.org" target="_blank" rel="noopener noreferrer">chartjs.org</a>
+            </li>
+            <li>
+              <strong>Google Fonts</strong> — Space Grotesk &amp; Inter<br/>
+              Licença Open Font License<br/>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- TAG AGRINHO visível -->
+      <div class="agrinho-tag" data-animate>
+        <span class="agrinho-label">TAG AGRINHO</span>
+        <span class="agrinho-tema">Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente</span>
+        <span class="agrinho-year">Projeto Agrinho 2025</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================
+       RODAPÉ
+       =================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="logo-icon">🌱</span>
+          <span class="footer-title">AgroFuturo</span>
+        </div>
+        <p class="footer-desc">
+          Site desenvolvido para o <strong>Projeto Agrinho 2025</strong> — tema: Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente. Construído com HTML, CSS e JavaScript puro.
+        </p>
+        <p class="footer-legal">
+          Todos os dados utilizados neste site são públicos e provenientes de fontes científicas e governamentais oficiais. As informações têm fins educativos.
+        </p>
+        <!-- TAG AGRINHO no footer -->
+        <div class="footer-tag agrinho">
+          #Agrinho2025 | <em>Agro forte, futuro sustentável</em>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botão voltar ao topo -->
+  <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
