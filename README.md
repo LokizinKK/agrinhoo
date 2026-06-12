@@ -121,9 +121,13 @@ As informações e estatísticas apresentadas no site foram obtidas de fontes of
 ## 👤 Autoria
 
 **Estudante:** Guilherme
+
 **Escola:** Darcy José Costa
+
 **Turma:** 1ºC
+
 **Ano:** 2025
+
 **Concurso:** Agrinho — Programação Front-End, Ensino Médio
 
 ---
